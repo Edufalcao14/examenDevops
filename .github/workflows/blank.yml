@@ -5,11 +5,13 @@ on:
       - main 
       - verifyLenght
       - verifySpecialChar
+      -verifyNumber
   pull_request:
     branches:
      - main 
       - verifyLenght
       - verifySpecialChar
+      -verifyNumber
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest

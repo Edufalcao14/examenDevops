@@ -21,3 +21,9 @@ describe('validations tests suites - isValid', () => {
         expect(result).toBeTruthy();
     });
 });
+describe('validations tests suites - isValid', () => {
+    test('should return false if the gamertag does not contain a special character', () => {
+        const result = isValid('gamerta007999!');
+        expect(result).toBeTruthy();
+    });
+});
