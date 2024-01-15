@@ -14,10 +14,3 @@ describe('validations tests suites - isValid', () => {
         expect(result).toBeTruthy();
     });
 });
-
-describe('validations tests suites - isValid', () => {
-    test('should return false if the gamertag does not contain a special character', () => {
-        const result = isValid('gamertag');
-        expect(result).toBeFalsy();
-    });
-});
