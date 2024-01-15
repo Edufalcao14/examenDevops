@@ -30,6 +30,10 @@ jobs:
               run: |
                   echo " Running Prettier and EsLint 👑"
                   npm run code:fix
+             - name: Test Code Coverage (Jest)
+              run: |
+                  echo " Checking code coverage in Jest 🚨"
+                  npm run test
             - name: Build the app
               run: |
                   echo "Building the app with webpack 🔨"
