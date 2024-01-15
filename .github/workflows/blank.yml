@@ -26,22 +26,26 @@ jobs:
             - name: Display start time
               run: |
                   echo "⏰ Starting pipeline at $(date +"%H:%M:%S %Z")"
-            - name: Check Prettier & Run EsLint
+
+             - name: Check Prettier & Run EsLint
               run: |
                   echo " Running Prettier and EsLint 👑"
                   npm run code:fix
-             - name: Test Code Coverage (Jest)
+
+            - name: Test Code Coverage (Jest)
               run: |
                   echo " Checking code coverage in Jest 🚨"
                   npm run test
+
             - name: Build the app
               run: |
                   echo "Building the app with webpack 🔨"
                   npm run build
+
             - name: Display end time
               run: |
                   echo "Ending pipeline at $(date +"%H:%M:%S %Z") ⏰"
             
             - name: Success without errors
               run: |
-                  echo "PIPELINE SUCCESS WITHOUT ERRORS!!"
+                  echo "PIPELINE SUCCESS WITHOUT ERRORS"
