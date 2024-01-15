@@ -1,6 +1,7 @@
 const isValid = (gamerTag) => {
     const validLength = gamerTag.length >= 8;
-    return validLength  
+    const specialCharacter = /[&$!è§à_]/.test(gamerTag);
+    return validLength  && specialCharacter; 
 };
 
 exports.isValid = isValid;

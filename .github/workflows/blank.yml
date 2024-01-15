@@ -2,10 +2,14 @@ name: GitHub Actions Continuous Integration
 on:
   push:
     branches:
-      - main
+      - main 
+      - verifyLenght
+      - verifySpecialChar
   pull_request:
     branches:
-      - main
+     - main 
+      - verifyLenght
+      - verifySpecialChar
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
