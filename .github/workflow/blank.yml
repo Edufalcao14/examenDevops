@@ -1,0 +1,43 @@
+name: GitHub Actions Continuous Integration
+run-name: ${{ github.actor }} is launching the pipeline  🚀
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+jobs:
+    Explore-GitHub-Actions:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository code
+              uses: actions/checkout@v4
+
+            - name: Set Up Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '18'
+
+            - name: Install Dependencies
+              run: |
+                  echo " Installing project dependencies 🔧 "
+                  npm install
+            - name: Display start time
+              run: |
+                  echo "⏰ Starting pipeline at $(date +"%H:%M:%S %Z")"
+            - name: Check Prettier & Run EsLint
+              run: |
+                  echo " Running Prettier and EsLint 👑"
+                  npm run code:fix
+            - name: Build the app
+              run: |
+                  echo "Building the app with webpack 🔨"
+                  npm run build
+            - name: Display end time
+              run: |
+                  echo "Ending pipeline at $(date +"%H:%M:%S %Z") ⏰"
+            
+            - name: Success without errors
+              run: |
+                  echo "PIPELINE SUCCESS WITHOUT ERRORS!!"
