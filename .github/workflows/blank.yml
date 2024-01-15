@@ -5,7 +5,7 @@ on:
       - main 
       - verifyLenght
       - verifySpecialChar
-      -verifyNumber
+      - verifyNumber
   pull_request:
     branches:
      - main 
